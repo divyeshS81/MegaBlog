@@ -24,15 +24,15 @@ export class AuthService {
                return  userAccount;
             }
         } catch (error) {
-            throw error;
+            console.log("Appwrite serive :: createAccount :: error", error);
         }
     }
 
     async login({email, password}) {
         try {
             return await this.account.createEmailSession(email, password);
-        } catch (error) {
-            throw error;
+        } catch (error) {               
+            console.log("Appwrite serive :: login :: error", error);
         }
     }
 
